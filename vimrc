@@ -1,3 +1,16 @@
+" for Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" put all Vundle plugins below
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
+
 filetype indent on
 filetype plugin on
 set backspace=2

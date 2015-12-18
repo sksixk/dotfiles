@@ -1,3 +1,9 @@
+export PATH=/Users/sang/Library/Python/3.4/bin:$PATH
+/Users/sang/Library/Python/3.4/bin/powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /Users/sang/Library/Python/3.4/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+
 alias java_home=/usr/libexec/java_home
 
 export CATALINA_OPTS="-server -Xms128m -Xmx768m -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8087 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"

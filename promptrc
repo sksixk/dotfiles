@@ -1,0 +1,41 @@
+parse_git_branch () {
+    git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (GIT::\1)#'
+}
+
+parse_hg_branch() {
+    hg branch 2>/dev/null | sed 's#\(.*\)# (HG::\1)#'
+}
+
+parse_cvs_branch() {
+    if [ -d CVS ] ; then
+        #cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
+        BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- ` ; if [ "$BRANCH" != "" ] ; then echo " (CVS::$BRANCH)" ; else echo " (CVS::HEAD)"; fi
+    fi
+}
+
+parse_svn_branch() {
+	echo
+}
+
+get_branch_information() {
+    if [ -e .svn ] ; then
+        parse_svn_branch
+    elif [ -e CVS ] ; then
+        parse_cvs_branch
+    else
+        parse_git_branch
+        parse_hg_branch
+    fi
+}
+
+BLACK="\[\033[0;38m\]"
+RED="\[\033[0;31m\]"
+RED_BOLD="\[\033[01;31m\]"
+BLUE="\[\033[01;34m\]"
+GREEN="\[\033[0;32m\]"
+CYAN="\[\033[0;36m\]"
+WHITE="\[\033[0;37m\]"
+YELLOW="\[\033[0;33m\]"
+
+export PS1="$BLACK[$RED  $GREEN\w$YELLOW\$(get_branch_information)$BLACK ] "
+

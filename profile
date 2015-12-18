@@ -1,3 +1,4 @@
+export POWERLINE_CONFIG_COMMAND=/Users/sang/Library/Python/3.4/bin/powerline-config
 export PATH=/Users/sang/Library/Python/3.4/bin:$PATH
 /Users/sang/Library/Python/3.4/bin/powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
@@ -56,5 +57,5 @@ gifit() {
 	#ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif
 }
 
-source .promptrc
+#source .promptrc
 

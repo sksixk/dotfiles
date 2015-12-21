@@ -23,7 +23,6 @@ alias xml="pbpaste | xmllint -format -"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate && sudo port upgrade outdated && sudo port uninstall inactive"
 alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgcli"
-alias julia="/Applications/Julia-0.3.11.app/Contents/Resources/julia/bin/julia"
 
 alias gangnam="ssh root@gangnam"
 alias cntowngf="ssh root@cntowngf"

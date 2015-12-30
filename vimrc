@@ -1,26 +1,21 @@
-" for Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+syntax enable           " enable syntax processing
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
 
-" put all Vundle plugins below
-Plugin 'bling/vim-airline'
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
-call vundle#end()
-filetype plugin indent on
-
-filetype indent on
-filetype plugin on
 set backspace=2
-set hlsearch
-set ignorecase
-set incsearch
 set laststatus=2
-set noshowmode
-set showmatch
-set showtabline=2
-set ts=4
-syntax on
+colorscheme delek
 

@@ -11,6 +11,7 @@ export CVSROOT=:extssh:sang@dev.acadaca.com:/usr/local/cvsroot
 export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql94/bin:$PATH"
 export HISTTIMEFORMAT="%F %T "
 export TOMCAT_COOKIE_SECURE=false
+export LSCOLORS=gxfxcxdxbxegedabagaced
 
 alias grep="grep --color=auto"
 alias rm="rm -i"

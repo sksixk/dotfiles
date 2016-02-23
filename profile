@@ -10,8 +10,8 @@ export EDITOR=vim
 export CVSROOT=:extssh:sang@dev.acadaca.com:/usr/local/cvsroot
 export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql94/bin:$PATH"
 export HISTTIMEFORMAT="%F %T "
-export TOMCAT_COOKIE_SECURE=false
 export LSCOLORS=gxfxcxdxbxegedabagaced
+export TOMCAT_SECURE=false
 
 alias grep="grep --color=auto"
 alias rm="rm -i"
@@ -34,6 +34,7 @@ alias sarah="ssh root@sarah"
 alias sophia="ssh root@sophia"
 alias lauren="ssh root@lauren"
 alias sinead="ssh root@sinead"
+alias jump="ssh jump"
 
 alias gsang4tunnel="ssh -f sang@vpn -L 8244:gangnam:8244 -N"
 alias gsang1tunnel="ssh -f sang@vpn -L 8214:gangnam:8214 -N"
@@ -54,3 +55,5 @@ gifit() {
 
 source .promptrc
 
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash

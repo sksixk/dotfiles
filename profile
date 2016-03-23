@@ -16,37 +16,23 @@ export TOMCAT_SECURE=false
 alias grep="grep --color=auto"
 alias rm="rm -i"
 alias ls="ls -GF"
-alias tomstart="$HOME/apache-tomcat-7.0.63/bin/catalina.sh start"
-alias tomstop="$HOME/apache-tomcat-7.0.63/bin/catalina.sh stop"
-alias followout="tail -f $HOME/apache-tomcat-7.0.63/logs/catalina.out"
 alias jvisualvm=$JAVA_HOME/bin/jvisualvm
 alias xml="pbpaste | xmllint -format -"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate && sudo port upgrade outdated && sudo port uninstall inactive"
 alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgcli"
 
-alias gangnam="ssh root@gangnam"
-alias cntowngf="ssh root@cntowngf"
 alias dev="ssh dev.acadaca.com"
-alias bastion="ssh bastion"
-alias ryan="ssh root@ryan"
-alias sarah="ssh root@sarah"
-alias sophia="ssh root@sophia"
-alias lauren="ssh root@lauren"
-alias sinead="ssh root@sinead"
 alias jump="ssh jump"
 
-alias gsang4tunnel="ssh -f sang@vpn -L 8244:gangnam:8244 -N"
-alias gsang1tunnel="ssh -f sang@vpn -L 8214:gangnam:8214 -N"
-alias gsang2tunnel="ssh -f sang@vpn -L 8224:gangnam:8224 -N"
-alias ctunnel="ssh -f sang@vpn -L 5432:chtowngf:5432 -N"
-alias ltunnel="ssh -f sang@vpn -L 5432:lauren:5432 -N"
+alias gsang4tunnel="ssh -f sang@vpn.acadaca.net -L 8244:gangnam:8244 -N"
+alias gsang1tunnel="ssh -f sang@vpn.acadaca.net -L 8214:gangnam:8214 -N"
+alias gsang2tunnel="ssh -f sang@vpn.acadaca.net -L 8224:gangnam:8224 -N"
+alias ctunnel="ssh -f sang@vpn.acadaca.net -L 5432:chtowngf:5432 -N"
+alias ltunnel="ssh -f sang@vpn.acadaca.net -L 5432:lauren:5432 -N"
 alias glpi="ssh -f sang@bilbo -L 61443:localhost:443 -N"
 
 alias casperjs=$HOME/casperjs/bin/casperjs
-
-alias 94="ssh sang@java_db_pgsql94"
-alias 91="ssh sang@java_db_pgsql91"
 
 gifit() {
 	ffmpeg -i $1 -vf scale=600:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -layers Optimize -loop 0 - out.gif
@@ -55,5 +41,5 @@ gifit() {
 
 source .promptrc
 
-
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+

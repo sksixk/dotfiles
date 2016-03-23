@@ -24,6 +24,11 @@ alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgc
 
 alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"
+alias gangnam="ssh gangnam"
+alias sophia="ssh sophia"
+alias ryan="ssh ryan"
+alias 94="java-db-pgsql94"
+alias 91="java-db-pgsql91"
 
 alias gsang4tunnel="ssh -f sang@vpn.acadaca.net -L 8244:gangnam:8244 -N"
 alias gsang1tunnel="ssh -f sang@vpn.acadaca.net -L 8214:gangnam:8214 -N"

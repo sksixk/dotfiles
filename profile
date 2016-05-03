@@ -1,7 +1,5 @@
 alias java_home=/usr/libexec/java_home
 
-export CATALINA_OPTS="-server -Xms128m -Xmx768m -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8087 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
-#export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/Users/sang/Documents/workspace/agent/dist/agent.jar"
 export JAVA_HOME=`java_home`
 export AXIS2_HOME=$HOME/axis2-1.6.2
 export AXIS1_HOME=$HOME/axis-1_4
@@ -24,9 +22,10 @@ alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgc
 
 alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"
-alias gangnam="ssh gangnam"
-alias sophia="ssh sophia"
-alias ryan="ssh ryan"
+alias gangnam="ssh root@gangnam"
+alias sinead="ssh root@192.168.1.205"
+alias sophia="ssh root@sophia"
+alias ryan="ssh root@ryan"
 alias 94="ssh java-db-pgsql94"
 alias 91="ssh java-db-pgsql91"
 

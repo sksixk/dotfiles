@@ -6,7 +6,7 @@ mkdir -p ~/old_dotfiles
 for file in *; do
 	if [ "$file" != "$script" ]
 
-			# we don't want to create symlink for this script
+		# we don't want to create symlink for this script
 	then
 
 		# if symlink, delete it

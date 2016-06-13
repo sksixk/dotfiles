@@ -14,7 +14,20 @@ parse_cvs_branch() {
 }
 
 parse_svn_branch() {
-	echo
+  # Capture the output of the "git status" command.
+  svn_info="$(svn info | egrep '^URL: ' 2> /dev/null)"
+
+  # Get the name of the branch.
+  branch_pattern="^URL: .*/(branches|tags)/([^/]+)"
+  trunk_pattern="^URL: .*/trunk(/.*)?$"
+  if [[ ${svn_info} =~ $branch_pattern ]]; then
+    branch=${BASH_REMATCH[2]}
+  elif [[ ${svn_info} =~ $trunk_pattern ]]; then
+    branch='trunk'
+  fi
+
+  # Set the final branch string.
+  echo " (SVN::${branch})"
 }
 
 get_branch_information() {

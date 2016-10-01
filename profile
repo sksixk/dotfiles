@@ -56,3 +56,19 @@ man() {
 
 source .promptrc
 
+export CATALINA_HOME=/Users/sang/apache-tomcat-7.0.70
+export CATALINA_BASE=/Users/sang/instance
+export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
+
+alias tomstop="sh $CATALINA_HOME/bin/catalina.sh stop"
+alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
+
+
+##
+# Your previous /Users/sang/.profile file was backed up as /Users/sang/.profile.macports-saved_2016-09-21_at_11:11:35
+##
+
+# MacPorts Installer addition on 2016-09-21_at_11:11:35: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

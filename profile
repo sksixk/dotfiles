@@ -72,3 +72,12 @@ alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+##
+# Your previous /Users/sang/.profile file was backed up as /Users/sang/.profile.macports-saved_2016-10-27_at_12:03:07
+##
+
+# MacPorts Installer addition on 2016-10-27_at_12:03:07: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

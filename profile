@@ -14,7 +14,7 @@ export TOMCAT_SECURE=false
 alias grep="grep --color=auto"
 alias rm="rm -i"
 alias ls="ls -GF"
-alias jvisualvm=$JAVA_HOME/bin/jvisualvm
+alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgcli"

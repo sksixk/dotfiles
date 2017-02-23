@@ -17,6 +17,7 @@ alias ls="ls -GF"
 alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
+alias portclean="sudo port -f clean --all all"
 alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgcli"
 
 alias dev="ssh dev.acadaca.com"
@@ -27,6 +28,7 @@ alias sophia="ssh root@sophia"
 alias ryan="ssh root@ryan"
 alias 94="ssh java-db-pgsql94"
 alias 91="ssh java-db-pgsql91"
+alias vpn="ssh vpn.acadaca.net"
 
 alias gsang4tunnel="ssh -f sang@vpn.acadaca.net -L 8244:gangnam:8244 -N"
 alias gsang1tunnel="ssh -f sang@vpn.acadaca.net -L 8214:gangnam:8214 -N"
@@ -58,6 +60,7 @@ source .promptrc
 
 export CATALINA_HOME=/Users/sang/apache-tomcat-7.0.70
 export CATALINA_BASE=/Users/sang/instance
+#export CATALINA_OPTS="-verbose:class -server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 
 alias tomstop="sh $CATALINA_HOME/bin/catalina.sh stop"

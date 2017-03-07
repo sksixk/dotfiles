@@ -23,11 +23,9 @@ alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgc
 alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"
 alias gangnam="ssh root@gangnam"
-alias sinead="ssh root@192.168.1.205"
-alias sophia="ssh root@sophia"
-alias ryan="ssh root@ryan"
-alias 94="ssh java-db-pgsql94"
-alias 91="ssh java-db-pgsql91"
+alias 94="ssh java-pgsql94-db"
+alias 93="ssh java-pgsql93-db"
+alias 91="ssh java-pgsql91-db"
 alias vpn="ssh vpn.acadaca.net"
 
 alias gsang4tunnel="ssh -f sang@vpn.acadaca.net -L 8244:gangnam:8244 -N"
@@ -72,15 +70,6 @@ alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
 ##
 
 # MacPorts Installer addition on 2016-09-21_at_11:11:35: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-##
-# Your previous /Users/sang/.profile file was backed up as /Users/sang/.profile.macports-saved_2016-10-27_at_12:03:07
-##
-
-# MacPorts Installer addition on 2016-10-27_at_12:03:07: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 

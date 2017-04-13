@@ -42,6 +42,12 @@ gifit() {
 	#ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif
 }
 
+function lazygit() {
+	git add .
+	git commit -a -m "$1"
+	git push
+}
+
 man() {
 	env \
 		LESS_TERMCAP_mb=$'\e[1;31m' \
@@ -63,7 +69,13 @@ export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeSta
 
 alias tomstop="sh $CATALINA_HOME/bin/catalina.sh stop"
 alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
-
+alias 94start="sudo port load postgresql94-server"
+alias 94stop="sudo port unload postgresql94-server"
+alias psql="sudo -u postgres psql"
+alias memstart="sudo port load memcached"
+alias memstop="sudo port unload memcached"
+alias redstart="sudo port load redis"
+alias redstop="sudo port unload redis"
 
 ##
 # Your previous /Users/sang/.profile file was backed up as /Users/sang/.profile.macports-saved_2016-09-21_at_11:11:35

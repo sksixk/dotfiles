@@ -6,7 +6,6 @@ export AXIS1_HOME=$HOME/axis-1_4
 export VISUAL=vim
 export EDITOR=vim
 export CVSROOT=:extssh:sang@dev.acadaca.com:/usr/local/cvsroot
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql94/bin:$PATH"
 export HISTTIMEFORMAT="%F %T "
 export LSCOLORS=gxfxcxdxbxegedabagaced
 export TOMCAT_SECURE=false
@@ -18,27 +17,22 @@ alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias portclean="sudo port -f clean --all all"
-alias pgcli="/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/pgcli"
 
 alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"
 alias gangnam="ssh root@gangnam"
-alias 94="ssh java-pgsql94-db"
-alias 93="ssh java-pgsql93-db"
-alias 91="ssh java-pgsql91-db"
-alias vpn="ssh vpn.acadaca.net"
-
-alias gsang4tunnel="ssh -f sang@vpn.acadaca.net -L 8244:gangnam:8244 -N"
-alias gsang1tunnel="ssh -f sang@vpn.acadaca.net -L 8214:gangnam:8214 -N"
-alias gsang2tunnel="ssh -f sang@vpn.acadaca.net -L 8224:gangnam:8224 -N"
-alias ctunnel="ssh -f sang@vpn.acadaca.net -L 5432:chtowngf:5432 -N"
-alias ltunnel="ssh -f sang@vpn.acadaca.net -L 5432:lauren:5432 -N"
-alias glpi="ssh -f sang@bilbo -L 61443:localhost:443 -N"
-
-alias casperjs=$HOME/casperjs/bin/casperjs
+alias 94="ssh java-pgsql94-db.example.com"
+alias 93="ssh java-pgsql93-db.example.com"
+alias 91="ssh java-pgsql91-db.example.com"
 
 gifit() {
-	ffmpeg -i $1 -vf scale=600:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -layers Optimize -loop 0 - out.gif
+  ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
+	ffmpeg -i $1 -i gifit-palette.png -filter_complex "fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
+
+	# or
+	#ffmpeg -i $1 -vf scale=600:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -layers Optimize -loop 0 - out.gif
+
+	# or
 	#ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif
 }
 
@@ -71,7 +65,7 @@ alias tomstop="sh $CATALINA_HOME/bin/catalina.sh stop"
 alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
 alias 94start="sudo port load postgresql94-server"
 alias 94stop="sudo port unload postgresql94-server"
-alias psql="sudo -u postgres psql"
+alias psql="sudo -u postgres /opt/local/lib/postgresql94/bin/psql"
 alias memstart="sudo port load memcached"
 alias memstop="sudo port unload memcached"
 alias redstart="sudo port load redis"

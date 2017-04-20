@@ -53,15 +53,21 @@ WHITE="\[\033[0;37m\]"
 BLACK="\[\033[0;38m\]"
 
 # see https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt about the changing the last digits below
-COLOR1="\[\033[01;38;5;52m\]"
-COLOR2="\[\033[01;38;5;124m\]"
-COLOR3="\[\033[01;38;5;196m\]"
-COLOR4="\[\033[01;38;5;202m\]"
-COLOR5="\[\033[01;38;5;214m\]"
-COLOR6="\[\033[01;38;5;220m\]"
-COLOR7="\[\033[01;38;5;226m\]"
-COLOR8="\[\033[01;38;5;228m\]"
+color_red_array=(52 124 196 202 214 220 226 228)
+color_green_array=(22 29 36 44 122 155 148 142)
+color_blue_array=(17 18 19 21 26 27 32 39 45)
 
-#export PS1="$BLACK[$MYSTERY\d $RED\u$WHITE@$BLUE\h $GREEN\w$YELLOW\$(get_branch_information)$BLACK ] "
-export PS1="$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7\$(get_branch_information)$COLOR8 ]$WHITE "
+promptit() {
+	COLOR1="\[\033[01;38;5;${color_red_array[0]}m\]"
+	COLOR2="\[\033[01;38;5;${color_red_array[1]}m\]"
+	COLOR3="\[\033[01;38;5;${color_red_array[2]}m\]"
+	COLOR4="\[\033[01;38;5;${color_red_array[3]}m\]"
+	COLOR5="\[\033[01;38;5;${color_red_array[4]}m\]"
+	COLOR6="\[\033[01;38;5;${color_red_array[5]}m\]"
+	COLOR7="\[\033[01;38;5;${color_red_array[6]}m\]"
+	COLOR8="\[\033[01;38;5;${color_red_array[7]}m\]"
+	echo "$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7\$(get_branch_information)$COLOR8 ]$WHITE "
+}
+
+export PS1=$(promptit)
 

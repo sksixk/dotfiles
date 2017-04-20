@@ -53,19 +53,33 @@ WHITE="\[\033[0;37m\]"
 BLACK="\[\033[0;38m\]"
 
 # see https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt about the changing the last digits below
-color_red_array=(52 124 196 202 214 220 226 228)
-color_green_array=(22 29 36 44 122 155 148 142)
-color_blue_array=(17 18 19 21 26 27 32 39 45)
+declare -a color_red_array=(52 124 196 202 214 220 226)
+declare -a color_green_array=(22 29 36 44 122 155 148)
+declare -a color_blue_array=(17 18 19 21 26 27 32 39)
+declare -a color_rainbow_array=(88 166 178 226 154 82 20 163)
+
+NUMBER=$(( $RANDOM % 4 ))
+COLORS=(red green blue rainbow)
 
 promptit() {
-	COLOR1="\[\033[01;38;5;${color_red_array[0]}m\]"
-	COLOR2="\[\033[01;38;5;${color_red_array[1]}m\]"
-	COLOR3="\[\033[01;38;5;${color_red_array[2]}m\]"
-	COLOR4="\[\033[01;38;5;${color_red_array[3]}m\]"
-	COLOR5="\[\033[01;38;5;${color_red_array[4]}m\]"
-	COLOR6="\[\033[01;38;5;${color_red_array[5]}m\]"
-	COLOR7="\[\033[01;38;5;${color_red_array[6]}m\]"
-	COLOR8="\[\033[01;38;5;${color_red_array[7]}m\]"
+	COLOR_ARR_NAME=color_${COLORS[$NUMBER]}_array
+	COLOR0_EL="$COLOR_ARR_NAME[0]"
+	COLOR1_EL="$COLOR_ARR_NAME[1]"
+	COLOR2_EL="$COLOR_ARR_NAME[2]"
+	COLOR3_EL="$COLOR_ARR_NAME[3]"
+	COLOR4_EL="$COLOR_ARR_NAME[4]"
+	COLOR5_EL="$COLOR_ARR_NAME[5]"
+	COLOR6_EL="$COLOR_ARR_NAME[6]"
+	COLOR7_EL="$COLOR_ARR_NAME[7]"
+
+	COLOR1="\[\033[01;38;5;${!COLOR0_EL}m\]"
+	COLOR2="\[\033[01;38;5;${!COLOR1_EL}m\]"
+	COLOR3="\[\033[01;38;5;${!COLOR2_EL}m\]"
+	COLOR4="\[\033[01;38;5;${!COLOR3_EL}m\]"
+	COLOR5="\[\033[01;38;5;${!COLOR4_EL}m\]"
+	COLOR6="\[\033[01;38;5;${!COLOR5_EL}m\]"
+	COLOR7="\[\033[01;38;5;${!COLOR6_EL}m\]"
+	COLOR8="\[\033[01;38;5;${!COLOR7_EL}m\]"
 	echo "$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7\$(get_branch_information)$COLOR8 ]$WHITE "
 }
 

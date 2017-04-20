@@ -26,7 +26,7 @@ alias 93="ssh java-pgsql93-db.example.com"
 alias 91="ssh java-pgsql91-db.example.com"
 
 gifit() {
-  ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
+	ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
 	ffmpeg -i $1 -i gifit-palette.png -filter_complex "fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
 
 	# or

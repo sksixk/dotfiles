@@ -41,14 +41,27 @@ get_branch_information() {
     fi
 }
 
-BLACK="\[\033[0;38m\]"
 RED="\[\033[0;31m\]"
 RED_BOLD="\[\033[01;31m\]"
-BLUE="\[\033[01;34m\]"
 GREEN="\[\033[0;32m\]"
+YELLOW="\[\033[0;33m\]"
+YELLOW_BOLD="\[\033[1;33m\]"
+BLUE="\[\033[01;34m\]"
+PURPLE="\[\033[0;35m\]"
 CYAN="\[\033[0;36m\]"
 WHITE="\[\033[0;37m\]"
-YELLOW="\[\033[0;33m\]"
+BLACK="\[\033[0;38m\]"
 
-export PS1="$BLACK[$RED  $GREEN\w$YELLOW\$(get_branch_information)$BLACK ] "
+# see https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt about the changing the last digits below
+COLOR1="\[\033[01;38;5;52m\]"
+COLOR2="\[\033[01;38;5;124m\]"
+COLOR3="\[\033[01;38;5;196m\]"
+COLOR4="\[\033[01;38;5;202m\]"
+COLOR5="\[\033[01;38;5;214m\]"
+COLOR6="\[\033[01;38;5;220m\]"
+COLOR7="\[\033[01;38;5;226m\]"
+COLOR8="\[\033[01;38;5;228m\]"
+
+#export PS1="$BLACK[$MYSTERY\d $RED\u$WHITE@$BLUE\h $GREEN\w$YELLOW\$(get_branch_information)$BLACK ] "
+export PS1="$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7\$(get_branch_information)$COLOR8 ]$WHITE "
 

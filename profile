@@ -17,6 +17,7 @@ alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
 alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias portclean="sudo port -f clean --all all"
+alias jupyter="jupyter-3.6 notebook"
 
 alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"

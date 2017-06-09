@@ -5,7 +5,6 @@ export AXIS2_HOME=$HOME/axis2-1.6.2
 export AXIS1_HOME=$HOME/axis-1_4
 export VISUAL=vim
 export EDITOR=vim
-export CVSROOT=:extssh:sang@dev.acadaca.com:/usr/local/cvsroot
 export HISTTIMEFORMAT="%F %T "
 export LSCOLORS=gxfxcxdxbxegedabagaced
 export TOMCAT_SECURE=false
@@ -19,7 +18,6 @@ alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uni
 alias portclean="sudo port -f clean --all all"
 alias jupyter="jupyter-3.6 notebook"
 
-alias dev="ssh dev.acadaca.com"
 alias jump="ssh jump"
 alias gangnam="ssh root@gangnam"
 alias 94="ssh java-pgsql94-db.example.com"
@@ -57,8 +55,8 @@ man() {
 
 source .promptrc
 
-export CATALINA_HOME=/Users/sang/apache-tomcat-7.0.70
-export CATALINA_BASE=/Users/sang/instance
+export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
+export CATALINA_BASE=$HOME/instance
 #export CATALINA_OPTS="-verbose:class -server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 
@@ -71,10 +69,6 @@ alias memstart="sudo port load memcached"
 alias memstop="sudo port unload memcached"
 alias redstart="sudo port load redis"
 alias redstop="sudo port unload redis"
-
-##
-# Your previous /Users/sang/.profile file was backed up as /Users/sang/.profile.macports-saved_2016-09-21_at_11:11:35
-##
 
 # MacPorts Installer addition on 2016-09-21_at_11:11:35: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"

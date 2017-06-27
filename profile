@@ -18,12 +18,6 @@ alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uni
 alias portclean="sudo port -f clean --all all"
 alias jupyter="jupyter-3.6 notebook"
 
-alias jump="ssh jump"
-alias gangnam="ssh root@gangnam"
-alias 94="ssh java-pgsql94-db.example.com"
-alias 93="ssh java-pgsql93-db.example.com"
-alias 91="ssh java-pgsql91-db.example.com"
-
 gifit() {
 	ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
 	ffmpeg -i $1 -i gifit-palette.png -filter_complex "fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
@@ -59,6 +53,7 @@ export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
 export CATALINA_BASE=$HOME/instance
 #export CATALINA_OPTS="-verbose:class -server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
+export GRADLE_HOME=/opt/local/share/java/gradle
 
 alias tomstop="sh $CATALINA_HOME/bin/catalina.sh stop"
 alias tomstart="sh $CATALINA_HOME/bin/catalina.sh start"
@@ -71,6 +66,6 @@ alias redstart="sudo port load redis"
 alias redstop="sudo port unload redis"
 
 # MacPorts Installer addition on 2016-09-21_at_11:11:35: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="$GRADLE_HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 

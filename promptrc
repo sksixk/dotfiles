@@ -84,6 +84,7 @@ promptit() {
 	COLOR7="\[\033[01;38;5;${!COLOR6_EL}m\]"
 	COLOR8="\[\033[01;38;5;${!COLOR7_EL}m\]"
 	echo "$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7\$(get_branch_information)$COLOR8 ]$WHITE "
+	#echo "$COLOR1[$COLOR2\d $COLOR3\u$COLOR4@$COLOR5\h $COLOR6\w$COLOR7 ]$WHITE "
 }
 
 export PS1=$(promptit)

@@ -47,7 +47,7 @@ man() {
 		man "$@"
 }
 
-source .promptrc
+source $HOME/.promptrc
 
 export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
 export CATALINA_BASE=$HOME/instance

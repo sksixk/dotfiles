@@ -7,7 +7,6 @@ export VISUAL=vim
 export EDITOR=vim
 export HISTTIMEFORMAT="%F %T "
 export LSCOLORS=gxfxcxdxbxegedabagaced
-export TOMCAT_SECURE=false
 
 alias grep="grep --color=auto"
 alias rm="rm -i"

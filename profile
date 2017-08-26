@@ -52,9 +52,8 @@ export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
 export CATALINA_BASE=$HOME/instance
 #export CATALINA_OPTS="-verbose:class -server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
 export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
-export GRADLE_HOME=/opt/local/share/java/gradle
 
-# MacPorts Installer addition on 2016-09-21_at_11:11:35: adding an appropriate PATH variable for use with MacPorts.
-export PATH="$GRADLE_HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
+PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+PATH=$HOME/apache-maven-3.5.0/bin:$PATH
+export PATH
 

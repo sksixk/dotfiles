@@ -16,6 +16,9 @@ alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier 
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias portclean="sudo port -f clean --all all"
 alias jupyter="jupyter-3.6 notebook"
+alias jettystart="$HOME/jetty/bin/jetty.sh start"
+alias jettystatus="$HOME/jetty/bin/jetty.sh status"
+alias jettystop="$HOME/jetty/bin/jetty.sh stop"
 
 gifit() {
 	ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
@@ -46,7 +49,11 @@ man() {
 		man "$@"
 }
 
-source $HOME/.promptrc
+#source $HOME/.promptrc
+source $HOME/github/git/contrib/completion/git-completion.bash
+source $HOME/github/git/contrib/completion/git-prompt.sh
+
+export PS1='[\u@\h \W$(__git_ps1 " (%s)")] \$ '
 
 export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
 export CATALINA_BASE=$HOME/instance

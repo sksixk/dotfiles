@@ -62,5 +62,6 @@ export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeSta
 
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 PATH=$HOME/apache-maven-3.5.0/bin:$PATH
+PATH=$HOME/apache-ant-1.10.1/bin:$PATH
 export PATH
 

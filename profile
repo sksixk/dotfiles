@@ -12,13 +12,8 @@ alias grep="grep --color=auto"
 alias rm="rm -i"
 alias ls="ls -GF"
 alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
-alias tnm="/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -message"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias portclean="sudo port -f clean --all all"
-alias jupyter="jupyter-3.6 notebook"
-alias jettystart="$HOME/jetty/bin/jetty.sh start"
-alias jettystatus="$HOME/jetty/bin/jetty.sh status"
-alias jettystop="$HOME/jetty/bin/jetty.sh stop"
 
 gifit() {
 	ffmpeg -y -i $1 -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifit-palette.png
@@ -55,13 +50,8 @@ source $HOME/github/git/contrib/completion/git-prompt.sh
 
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")] \$ '
 
-export CATALINA_HOME=$HOME/apache-tomcat-7.0.70
-export CATALINA_BASE=$HOME/instance
-#export CATALINA_OPTS="-verbose:class -server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
-export CATALINA_OPTS="-server -Xms256m -Xmx1024m -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Djava.awt.headless=true -Dnetworkaddress.cache.ttl=0 -Dsun.net.inetaddr.ttl=0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8247 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=`hostname`"
-
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-PATH=$HOME/apache-maven-3.5.0/bin:$PATH
+PATH=$HOME/apache-maven-3.5.2/bin:$PATH
 PATH=$HOME/apache-ant-1.10.1/bin:$PATH
 export PATH
 

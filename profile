@@ -11,7 +11,6 @@ export LSCOLORS=gxfxcxdxbxegedabagaced
 alias grep="grep --color=auto"
 alias rm="rm -i"
 alias ls="ls -GF"
-alias jvisualvm="$JAVA_HOME/bin/jvisualvm -J-Xmx2048m"
 alias portup="sudo port -d selfupdate; sudo port upgrade outdated; sudo port uninstall inactive"
 alias portclean="sudo port -f clean --all all"
 

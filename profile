@@ -1,6 +1,6 @@
 alias java_home=/usr/libexec/java_home
 
-export JAVA_HOME=`java_home`
+export JAVA_HOME=`java_home -v 1.8`
 export AXIS2_HOME=$HOME/axis2-1.6.2
 export AXIS1_HOME=$HOME/axis-1_4
 export VISUAL=vim
@@ -52,17 +52,6 @@ export PS1='[\u@\h \W$(__git_ps1 " (%s)")] \$ '
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 PATH=$HOME/apache-maven-3.5.2/bin:$PATH
 PATH=$HOME/apache-ant-1.10.1/bin:$PATH
-export PATH
-
-
-# Setting PATH for Python 3.6
-# The original version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
-
-# Setting PATH for Python 3.6
-# The original version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
 # Setting PATH for Python 3.7

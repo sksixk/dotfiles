@@ -52,6 +52,7 @@ export PS1='[\u@\h \W$(__git_ps1 " (%s)")] \$ '
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 PATH=$HOME/apache-maven-3.5.2/bin:$PATH
 PATH=$HOME/apache-ant-1.10.1/bin:$PATH
+PATH=$HOME/bin:$PATH
 export PATH
 
 # Setting PATH for Python 3.7

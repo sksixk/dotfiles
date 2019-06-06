@@ -1,44 +1,44 @@
 parse_git_branch () {
-    git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (GIT::\1)#'
+	git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (GIT::\1)#'
 }
 
 parse_hg_branch() {
-    hg branch 2>/dev/null | sed 's#\(.*\)# (HG::\1)#'
+	hg branch 2>/dev/null | sed 's#\(.*\)# (HG::\1)#'
 }
 
 parse_cvs_branch() {
-    if [ -d CVS ] ; then
-        #cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
-        BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- ` ; if [ "$BRANCH" != "" ] ; then echo " (CVS::$BRANCH)" ; else echo " (CVS::HEAD)"; fi
-    fi
+	if [ -d CVS ] ; then
+		#cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
+		BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- ` ; if [ "$BRANCH" != "" ] ; then echo " (CVS::$BRANCH)" ; else echo " (CVS::HEAD)"; fi
+	fi
 }
 
 parse_svn_branch() {
-  # Capture the output of the "git status" command.
-  svn_info="$(svn info | egrep '^URL: ' 2> /dev/null)"
+	# Capture the output of the "git status" command.
+	svn_info="$(svn info | egrep '^URL: ' 2> /dev/null)"
 
-  # Get the name of the branch.
-  branch_pattern="^URL: .*/(branches|tags)/([^/]+)"
-  trunk_pattern="^URL: .*/trunk(/.*)?$"
-  if [[ ${svn_info} =~ $branch_pattern ]]; then
-    branch=${BASH_REMATCH[2]}
-  elif [[ ${svn_info} =~ $trunk_pattern ]]; then
-    branch='trunk'
-  fi
+	# Get the name of the branch.
+	branch_pattern="^URL: .*/(branches|tags)/([^/]+)"
+	trunk_pattern="^URL: .*/trunk(/.*)?$"
+	if [[ ${svn_info} =~ $branch_pattern ]]; then
+		branch=${BASH_REMATCH[2]}
+	elif [[ ${svn_info} =~ $trunk_pattern ]]; then
+		branch='trunk'
+	fi
 
-  # Set the final branch string.
-  echo " (SVN::${branch})"
+	# Set the final branch string.
+	echo " (SVN::${branch})"
 }
 
 get_branch_information() {
-    if [ -e .svn ] ; then
-        parse_svn_branch
-    elif [ -e CVS ] ; then
-        parse_cvs_branch
-    else
-        parse_git_branch
-        parse_hg_branch
-    fi
+	if [ -e .svn ] ; then
+		parse_svn_branch
+	elif [ -e CVS ] ; then
+		parse_cvs_branch
+	else
+		parse_git_branch
+		parse_hg_branch
+	fi
 }
 
 RED="\[\033[0;31m\]"

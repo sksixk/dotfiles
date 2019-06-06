@@ -1,3 +1,5 @@
+tabs -2
+
 alias java_home=/usr/libexec/java_home
 
 export JAVA_HOME=`java_home -v 1.8`

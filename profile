@@ -56,6 +56,3 @@ PATH=$HOME/apache-maven-3.5.2/bin:$PATH
 PATH=$HOME/apache-ant-1.10.1/bin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
-
-screenfetch
-

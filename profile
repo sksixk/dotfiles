@@ -57,5 +57,3 @@ PATH=$HOME/apache-ant-1.10.1/bin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
 
-neofetch
-
